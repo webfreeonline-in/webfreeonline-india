@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebFreeOnline | Premium Digital Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --whatsapp: #25D366;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* --- WhatsApp Floating Button --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: grid;
+            place-items: center;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+            background-color: #128C7E;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-box {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: white; }
+
+        .btn-nav {
+            background: white;
+            color: var(--dark);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* --- Hero Section with Video --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5), var(--dark));
+            z-index: -1;
+        }
+
+        .hero-content { 
+            max-width: 900px; 
+            padding: 0 2rem; 
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .badge {
+            background: rgba(99, 102, 241, 0.2);
+            color: #c7d2fe;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid var(--primary);
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-btns { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid var(--glass-border);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-primary:hover, .btn-secondary:hover { transform: translateY(-5px); }
+
+        /* --- Sections --- */
+        .section { padding: 100px 2rem; max-width: 1200px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            transition: 0.4s;
+        }
+
+        .card:hover { border-color: var(--primary); background: rgba(255, 255, 255, 0.08); }
+
+        .card.popular {
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.15), transparent);
+            border: 1px solid var(--primary);
+        }
+
+        .price { font-size: 3rem; font-weight: 800; margin: 1.5rem 0; }
+        .price span { font-size: 1rem; color: #94a3b8; }
+
+        .features-list { list-style: none; margin-bottom: 2rem; }
+        .features-list li { margin-bottom: 12px; font-size: 0.95rem; }
+        .features-list i { color: var(--whatsapp); margin-right: 10px; }
+
+        /* --- Contact --- */
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .booking-card { background: white; padding: 3rem; border-radius: 30px; color: var(--dark); }
+        .form-input { width: 100%; padding: 15px; margin-bottom: 1.2rem; border: 1px solid #e2e8f0; border-radius: 12px; }
+        .btn-submit { width: 100%; padding: 18px; background: var(--dark); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; }
+
+        /* --- WhatsApp Contact Button --- */
+        .whatsapp-btn-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .whatsapp-btn-contact:hover { background: #128C7E; transform: translateX(5px); }
+
+        footer { padding: 4rem 2rem; border-top: 1px solid var(--glass-border); text-align: center; color: #64748b; }
+
+        @media (max-width: 768px) {
+            .nav-links, .btn-nav { display: none; }
+            .contact-container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/917020975647?text=Hi! I want to take my business live online." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <div class="logo-box">W</div> WebFreeOnline
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn-nav">Start Now</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="video-container">
+            <video autoplay muted loop playsinline poster="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg">
+                <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27dbced2d93e990e6601f705140f6b4d36f987d&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-overlay"></div>
+
+        <div class="hero-content"> 
+            <span class="badge">4K Digital Experience • Trusted 200+Business Online</span>
+            <h1>See How We Get You <span>Live On Internet.</span></h1>
+            <p>From a local home business to a global digital powerhouse. We handle the code, the hosting, and the growth while you watch your business expand live.</p>
+            <div class="hero-btns">
+                <a href="#pricing" class="btn-primary">View Packages</a>
+                <a href="https://wa.me/917020975647" class="btn-secondary">Chat With Experts</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+            <h2>Choose Your Path to Success</h2>
+            <p style="color: #94a3b8;">Transparent pricing with no hidden fees.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Basic</h3>
+                <div class="price">₹4,800<span>/project</span></div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> 5 Premium Pages</li>
+                    <li><i class="fas fa-check-circle"></i> Mobile Responsive</li>
+                    <li><i class="fas fa-check-circle"></i> 1 Year Free Hosting</li>
+                </ul>
+             <a href="#contact" class="btn-primary" style="display: block; text-align: center;">Get Started</a>
+            </div>
+
+            <div class="card popular">
+                <span class="badge" style="margin-bottom: 1rem;">Recommended</span>
+                <h3>*Most Popular*</h3>
+                <div class="price">₹7,500<span>/project</span></div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> 10 Custom Pages</li>
+                    <li><i class="fas fa-check-circle"></i> Priority Speed Loading</li>
+                    <li><i class="fas fa-check-circle"></i> WhatsApp Live Chat</li>
+                    <li><i class="fas fa-check-circle"></i> Advanced SEO</li>
+                </ul>
+                <a href="#contact" class="btn-primary" style="display: block; text-align: center;">Get Started</a>
+            </div>
+
+            <div class="card">
+                <h3>Premium</h3>
+                <div class="price">₹18,999<span>/project</span></div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Unlimited Architecture</li>
+                    <li><i class="fas fa-check-circle"></i> eCommerce Shop</li>
+                    <li><i class="fas fa-check-circle"></i> 24/7 Support</li>
+                </ul>
+              <a href="#contact" class="btn-primary" style="display: block; text-align: center;">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="contact-container">
+            <div>
+                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Let’s create something <span style="color: var(--primary);">Legendary.</span></h2>
+                <p style="color: #94a3b8;">Join 200+ businesses that went live with WebFreeOnline. Our team is ready to assist you right now.</p>
+                
+                <a href="https://wa.me/917020975647" class="whatsapp-btn-contact">
+                    <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
+                    <span>Message +91 7020975647</span>
+                </a>
+            </div>
+
+            <div class="booking-card">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="93772144-feae-461c-90f1-0b3d31839727">
+                    <input type="text" name="name" placeholder="Full Name" class="form-input" required>
+                    <input type="email" name="email" placeholder="Business Email" class="form-input" required>
+                    <select name="package" class="form-input">
+                        <option>Basic Package</option>
+                        <option>Most Popular Package</option>
+                        <option>Premium Package</option>
+                    </select>
+                    <textarea name="message" placeholder="Describe your dream project..." class="form-input" style="height: 100px;"></textarea>
+                    <button type="submit" class="btn-submit">Let's Get Online 🚀</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2022 WebFreeOnline Digital Agency. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #475569;">Building the future of the internet, one pixel at a time.</p>
+    </footer>
+
+</body>
+</html>
