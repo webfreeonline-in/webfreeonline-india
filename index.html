@@ -17,12 +17,7 @@
             --glass-border: rgba(255, 255, 255, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -51,12 +46,8 @@
             transition: 0.3s ease;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(10deg);
-            background-color: #128C7E;
-        }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); background-color: #128C7E; }
 
-        /* --- Header --- */
         header {
             padding: 1.5rem 0;
             position: fixed;
@@ -76,123 +67,36 @@
             padding: 0 2rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: white;
-        }
+        .logo { font-size: 1.5rem; font-weight: 800; display: flex; align-items: center; gap: 10px; text-decoration: none; color: white; }
+        .logo-box { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 10px; display: grid; place-items: center; }
 
-        .logo-box {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 10px;
-            display: grid;
-            place-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: #94a3b8; text-decoration: none; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: white; }
 
-        .btn-nav {
-            background: white;
-            color: var(--dark);
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-        }
+        .btn-nav { background: white; color: var(--dark); padding: 10px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; }
 
-        /* --- Hero Section with Video --- */
         .hero {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             overflow: hidden;
+            padding: 120px 20px;
         }
 
-        .video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
+        .video-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
+        .video-container video { width: 100%; height: 100%; object-fit: cover; }
+        .video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6), var(--dark)); z-index: -1; }
 
-        .video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .hero-content { max-width: 900px; animation: fadeInUp 1s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5), var(--dark));
-            z-index: -1;
-        }
-
-        .hero-content { 
-            max-width: 900px; 
-            padding: 0 2rem; 
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .badge {
-            background: rgba(99, 102, 241, 0.2);
-            color: #c7d2fe;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: 1px solid var(--primary);
-            margin-bottom: 2rem;
-            display: inline-block;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(to right, #818cf8, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-btns { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .badge { background: rgba(99, 102, 241, 0.2); color: #c7d2fe; padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border: 1px solid var(--primary); margin-bottom: 2rem; display: inline-block; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero h1 span { background: linear-gradient(to right, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -201,92 +105,61 @@
             border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
             transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 18px 36px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            border: 1px solid var(--glass-border);
-            transition: 0.3s;
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-primary:hover, .btn-secondary:hover { transform: translateY(-5px); }
-
-        /* --- Sections --- */
         .section { padding: 100px 2rem; max-width: 1200px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-
-        .card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            transition: 0.4s;
-        }
-
-        .card:hover { border-color: var(--primary); background: rgba(255, 255, 255, 0.08); }
-
-        .card.popular {
-            background: linear-gradient(180deg, rgba(99, 102, 241, 0.15), transparent);
-            border: 1px solid var(--primary);
-        }
-
-        .price { font-size: 3rem; font-weight: 800; margin: 1.5rem 0; }
-        .price span { font-size: 1rem; color: #94a3b8; }
-
-        .features-list { list-style: none; margin-bottom: 2rem; }
-        .features-list li { margin-bottom: 12px; font-size: 0.95rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card { background: var(--glass); border: 1px solid var(--glass-border); padding: 3rem 2rem; border-radius: 24px; display: flex; flex-direction: column; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .price { font-size: 2.5rem; font-weight: 800; margin: 1.5rem 0; }
+        .price span { font-size: 1rem; color: #94a3b8; font-weight: 400; }
+        .features-list { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
+        .features-list li { margin-bottom: 12px; }
         .features-list i { color: var(--whatsapp); margin-right: 10px; }
 
-        /* --- Contact --- */
-        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .booking-card { background: white; padding: 3rem; border-radius: 30px; color: var(--dark); }
-        .form-input { width: 100%; padding: 15px; margin-bottom: 1.2rem; border: 1px solid #e2e8f0; border-radius: 12px; }
-        .btn-submit { width: 100%; padding: 18px; background: var(--dark); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; }
-
-        /* --- WhatsApp Contact Button --- */
-        .whatsapp-btn-contact {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            background: var(--whatsapp);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 700;
-            margin-top: 20px;
-            transition: 0.3s;
+        /* --- Phone Input Group Fix --- */
+        .phone-group { display: flex; flex-direction: column; gap: 0; margin-bottom: 1.2rem; }
+        .country-code { 
+            width: 100%; 
+            border-bottom-left-radius: 0; 
+            border-bottom-right-radius: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+            background-color: #f1f5f9;
         }
-        .whatsapp-btn-contact:hover { background: #128C7E; transform: translateX(5px); }
+        .phone-number { 
+            width: 100%; 
+            border-top-left-radius: 0; 
+            border-top-right-radius: 0;
+        }
+
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .booking-card { background: white; padding: 3rem; border-radius: 30px; color: var(--dark); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .form-input { width: 100%; padding: 15px; border: 1px solid #e2e8f0; border-radius: 12px; font-family: inherit; font-size: 1rem; margin-bottom: 1.2rem; }
+        .btn-submit { width: 100%; padding: 18px; background: var(--dark); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s; font-size: 1.1rem; }
+        .btn-submit:hover { background: var(--primary); transform: scale(1.02); }
 
         footer { padding: 4rem 2rem; border-top: 1px solid var(--glass-border); text-align: center; color: #64748b; }
 
         @media (max-width: 768px) {
             .nav-links, .btn-nav { display: none; }
             .contact-container { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/917020975647?text=Hi! I want to take my business live online." class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/917020975647" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <header>
         <nav>
-            <a href="#" class="logo">
-                <div class="logo-box">W</div> WebFreeOnline
-            </a>
+            <a href="#" class="logo"><div class="logo-box">W</div> WebFreeOnline</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -299,61 +172,55 @@
     <section id="home" class="hero">
         <div class="video-container">
             <video autoplay muted loop playsinline poster="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg">
-                <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27dbced2d93e990e6601f705140f6b4d36f987d&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+                <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27dbced2d93e990e6601f705140f6b4d36f987d&profile_id=164" type="video/mp4">
             </video>
         </div>
         <div class="video-overlay"></div>
-
         <div class="hero-content"> 
-            <span class="badge">4K Digital Experience • Trusted 200+Business Online</span>
+            <span class="badge">Trusted 200+ Businesses Online</span>
             <h1>See How We Get You <span>Live On Internet.</span></h1>
             <p>From a local home business to a global digital powerhouse. We handle the code, the hosting, and the growth while you watch your business expand live.</p>
-            <div class="hero-btns">
+            <div class="hero-btns" style="margin-top:20px;">
                 <a href="#pricing" class="btn-primary">View Packages</a>
-                <a href="https://wa.me/917020975647" class="btn-secondary">Chat With Experts</a>
+                <a href="https://wa.me/917020975647" class="btn-primary" style="background: var(--whatsapp);">Chat With Experts</a>
             </div>
         </div>
     </section>
 
     <section id="pricing" class="section">
-        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
-            <h2>Choose Your Path to Success</h2>
-            <p style="color: #94a3b8;">Transparent pricing with no hidden fees.</p>
-        </div>
         <div class="grid">
             <div class="card">
                 <h3>Basic</h3>
                 <div class="price">₹4,800<span>/project</span></div>
                 <ul class="features-list">
-                    <li><i class="fas fa-check-circle"></i> 1 Page Premium </li>
-                    <li><i class="fas fa-check-circle"></i> Whatsapp messenger 24/7 </li>
-                    <li><i class="fas fa-check-circle"></i> 1 Year Free Hosting .in </li>
+                    <li><i class="fas fa-check-circle"></i> 1 Page Premium</li>
+                    <li><i class="fas fa-check-circle"></i> 1 Year Free Hosting</li>
+                    <li><i class="fas fa-check-circle"></i> Basic SSL</li>
                 </ul>
-             <a href="#contact" class="btn-primary" style="display: block; text-align: center;">Get Started</a>
+                <a href="#contact" class="btn-primary" style="width:100%; text-align:center">Get Started</a>
             </div>
 
-            <div class="card popular">
-                <span class="badge" style="margin-bottom: 1rem;">Recommended</span>
-                <h3>*Most Popular*</h3>
+            <div class="card" style="border: 1px solid var(--primary); background: linear-gradient(180deg, rgba(99, 102, 241, 0.1), transparent);">
+                <span class="badge">Most Popular</span>
+                <h3>Business</h3>
                 <div class="price">₹7,500<span>/project</span></div>
                 <ul class="features-list">
                     <li><i class="fas fa-check-circle"></i> 10 Custom Pages</li>
-                    <li><i class="fas fa-check-circle"></i> Priority Speed Loading</li>
-                    <li><i class="fas fa-check-circle"></i> WhatsApp Live Chat</li>
                     <li><i class="fas fa-check-circle"></i> Advanced SEO</li>
+                    <li><i class="fas fa-check-circle"></i> Business Emails</li>
                 </ul>
-                <a href="#contact" class="btn-primary" style="display: block; text-align: center;">Get Started</a>
+                <a href="#contact" class="btn-primary" style="width:100%; text-align:center">Get Started</a>
             </div>
 
             <div class="card">
                 <h3>Premium</h3>
                 <div class="price">₹18,999<span>/project</span></div>
                 <ul class="features-list">
-                    <li><i class="fas fa-check-circle"></i> Unlimited Architecture</li>
-                    <li><i class="fas fa-check-circle"></i> eCommerce Shop</li>
-                    <li><i class="fas fa-check-circle"></i> 24/7 Support</li>
+                    <li><i class="fas fa-check-circle"></i> E-commerce Ready</li>
+                    <li><i class="fas fa-check-circle"></i> Payment Gateway</li>
+                    <li><i class="fas fa-check-circle"></i> 24/7 Priority Support</li>
                 </ul>
-              <a href="#contact" class="btn-primary" style="display: block; text-align: center;">Get Started</a>
+                <a href="#contact" class="btn-primary" style="width:100%; text-align:center">Get Started</a>
             </div>
         </div>
     </section>
@@ -362,26 +229,248 @@
         <div class="contact-container">
             <div>
                 <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Let’s create something <span style="color: var(--primary);">Legendary.</span></h2>
-                <p style="color: #94a3b8;">Join 200+ businesses that went live with WebFreeOnline. Our team is ready to assist you right now.</p>
-                
-                <a href="https://wa.me/917020975647" class="whatsapp-btn-contact">
-                    <i class="fab fa-whatsapp" style="font-size: 2rem;"></i>
-                    <span>Message +91 7020975647</span>
-                </a>
+                <p style="color: #94a3b8;">Select your country and enter your WhatsApp number to start.</p>
             </div>
 
             <div class="booking-card">
-                <form action="https://api.web3forms.com/submit" method="POST">
+                <form id="mainForm">
                     <input type="hidden" name="access_key" value="93772144-feae-461c-90f1-0b3d31839727">
-                    <input type="text" name="name" placeholder="Full Name" class="form-input" required>
-                    <input type="email" name="email" placeholder="Business Email" class="form-input" required>
-                    <select name="package" class="form-input">
-                        <option>Basic Package</option>
-                        <option>Most Popular Package</option>
-                        <option>Premium Package</option>
+
+                    <input type="text" id="name" name="name" placeholder="Full Name" class="form-input" required>
+                    <input type="email" id="email" name="email" placeholder="Business Email" class="form-input" required>
+                    
+                    <div class="phone-group">
+                        <select id="countrySelect" class="form-input country-code" required>
+                            <option value="" disabled selected>Select Country</option>
+                            <option value="93">Afghanistan +93</option>
+                            <option value="355">Albania +355</option>
+                            <option value="213">Algeria +213</option>
+                            <option value="376">Andorra +376</option>
+                            <option value="244">Angola +244</option>
+                            <option value="1264">Anguilla +1264</option>
+                            <option value="1268">Antigua & Barbuda +1268</option>
+                            <option value="54">Argentina +54</option>
+                            <option value="374">Armenia +374</option>
+                            <option value="297">Aruba +297</option>
+                            <option value="61">Australia +61</option>
+                            <option value="43">Austria +43</option>
+                            <option value="994">Azerbaijan +994</option>
+                            <option value="1242">Bahamas +1242</option>
+                            <option value="973">Bahrain +973</option>
+                            <option value="880">Bangladesh +880</option>
+                            <option value="1246">Barbados +1246</option>
+                            <option value="375">Belarus +375</option>
+                            <option value="32">Belgium +32</option>
+                            <option value="501">Belize +501</option>
+                            <option value="229">Benin +229</option>
+                            <option value="1441">Bermuda +1441</option>
+                            <option value="975">Bhutan +975</option>
+                            <option value="591">Bolivia +591</option>
+                            <option value="387">Bosnia Herzegovina +387</option>
+                            <option value="267">Botswana +267</option>
+                            <option value="55">Brazil +55</option>
+                            <option value="673">Brunei +673</option>
+                            <option value="359">Bulgaria +359</option>
+                            <option value="226">Burkina Faso +226</option>
+                            <option value="257">Burundi +257</option>
+                            <option value="855">Cambodia +855</option>
+                            <option value="237">Cameroon +237</option>
+                            <option value="1">Canada +1</option>
+                            <option value="238">Cape Verde Islands +238</option>
+                            <option value="1345">Cayman Islands +1345</option>
+                            <option value="236">Central African Republic +236</option>
+                            <option value="56">Chile +56</option>
+                            <option value="86">China +86</option>
+                            <option value="57">Colombia +57</option>
+                            <option value="269">Comoros +269</option>
+                            <option value="242">Congo +242</option>
+                            <option value="682">Cook Islands +682</option>
+                            <option value="506">Costa Rica +506</option>
+                            <option value="385">Croatia +385</option>
+                            <option value="53">Cuba +53</option>
+                            <option value="357">Cyprus South +357</option>
+                            <option value="420">Czech Republic +420</option>
+                            <option value="45">Denmark +45</option>
+                            <option value="253">Djibouti +253</option>
+                            <option value="1809">Dominica +1809</option>
+                            <option value="1809">Dominican Republic +1809</option>
+                            <option value="593">Ecuador +593</option>
+                            <option value="20">Egypt +20</option>
+                            <option value="503">El Salvador +503</option>
+                            <option value="240">Equatorial Guinea +240</option>
+                            <option value="291">Eritrea +291</option>
+                            <option value="372">Estonia +372</option>
+                            <option value="251">Ethiopia +251</option>
+                            <option value="500">Falkland Islands +500</option>
+                            <option value="298">Faroe Islands +298</option>
+                            <option value="679">Fiji +679</option>
+                            <option value="358">Finland +358</option>
+                            <option value="33">France +33</option>
+                            <option value="594">French Guiana +594</option>
+                            <option value="689">French Polynesia +689</option>
+                            <option value="241">Gabon +241</option>
+                            <option value="220">Gambia +220</option>
+                            <option value="995">Georgia +995</option>
+                            <option value="49">Germany +49</option>
+                            <option value="233">Ghana +233</option>
+                            <option value="350">Gibraltar +350</option>
+                            <option value="30">Greece +30</option>
+                            <option value="299">Greenland +299</option>
+                            <option value="1473">Grenada +1473</option>
+                            <option value="590">Guadeloupe +590</option>
+                            <option value="671">Guam +671</option>
+                            <option value="502">Guatemala +502</option>
+                            <option value="224">Guinea +224</option>
+                            <option value="245">Guinea - Bissau +245</option>
+                            <option value="592">Guyana +592</option>
+                            <option value="509">Haiti +509</option>
+                            <option value="504">Honduras +504</option>
+                            <option value="852">Hong Kong +852</option>
+                            <option value="36">Hungary +36</option>
+                            <option value="354">Iceland +354</option>
+                            <option value="91" selected>India +91</option>
+                            <option value="62">Indonesia +62</option>
+                            <option value="98">Iran +98</option>
+                            <option value="964">Iraq +964</option>
+                            <option value="353">Ireland +353</option>
+                            <option value="972">Israel +972</option>
+                            <option value="39">Italy +39</option>
+                            <option value="1876">Jamaica +1876</option>
+                            <option value="81">Japan +81</option>
+                            <option value="9 Jordan">Jordan +962</option>
+                            <option value="7">Kazakhstan +7</option>
+                            <option value="254">Kenya +254</option>
+                            <option value="686">Kiribati +686</option>
+                            <option value="850">Korea North +850</option>
+                            <option value="82">Korea South +82</option>
+                            <option value="965">Kuwait +965</option>
+                            <option value="996">Kyrgyzstan +996</option>
+                            <option value="856">Laos +856</option>
+                            <option value="371">Latvia +371</option>
+                            <option value="961">Lebanon +961</option>
+                            <option value="266">Lesotho +266</option>
+                            <option value="231">Liberia +231</option>
+                            <option value="218">Libya +218</option>
+                            <option value="417">Liechtenstein +417</option>
+                            <option value="370">Lithuania +370</option>
+                            <option value="352">Luxembourg +352</option>
+                            <option value="853">Macao +853</option>
+                            <option value="389">Macedonia +389</option>
+                            <option value="261">Madagascar +261</option>
+                            <option value="265">Malawi +265</option>
+                            <option value="60">Malaysia +60</option>
+                            <option value="960">Maldives +960</option>
+                            <option value="223">Mali +223</option>
+                            <option value="356">Malta +356</option>
+                            <option value="692">Marshall Islands +692</option>
+                            <option value="596">Martinique +596</option>
+                            <option value="222">Mauritania +222</option>
+                            <option value="269">Mayotte +269</option>
+                            <option value="52">Mexico +52</option>
+                            <option value="691">Micronesia +691</option>
+                            <option value="373">Moldova +373</option>
+                            <option value="377">Monaco +377</option>
+                            <option value="976">Mongolia +976</option>
+                            <option value="1664">Montserrat +1664</option>
+                            <option value="212">Morocco +212</option>
+                            <option value="258">Mozambique +258</option>
+                            <option value="95">Myanmar +95</option>
+                            <option value="264">Namibia +264</option>
+                            <option value="674">Nauru +674</option>
+                            <option value="977">Nepal +977</option>
+                            <option value="31">Netherlands +31</option>
+                            <option value="687">New Caledonia +687</option>
+                            <option value="64">New Zealand +64</option>
+                            <option value="505">Nicaragua +505</option>
+                            <option value="227">Niger +227</option>
+                            <option value="234">Nigeria +234</option>
+                            <option value="683">Niue +683</option>
+                            <option value="672">Norfolk Islands +672</option>
+                            <option value="670">Northern Marianas +670</option>
+                            <option value="47">Norway +47</option>
+                            <option value="968">Oman +968</option>
+                            <option value="680">Palau +680</option>
+                            <option value="507">Panama +507</option>
+                            <option value="675">Papua New Guinea +675</option>
+                            <option value="595">Paraguay +595</option>
+                            <option value="51">Peru +51</option>
+                            <option value="63">Philippines +63</option>
+                            <option value="48">Poland +48</option>
+                            <option value="351">Portugal +351</option>
+                            <option value="1787">Puerto Rico +1787</option>
+                            <option value="974">Qatar +974</option>
+                            <option value="262">Reunion +262</option>
+                            <option value="40">Romania +40</option>
+                            <option value="7">Russia +7</option>
+                            <option value="250">Rwanda +250</option>
+                            <option value="378">San Marino +378</option>
+                            <option value="239">Sao Tome & Principe +239</option>
+                            <option value="966">Saudi Arabia +966</option>
+                            <option value="221">Senegal +221</option>
+                            <option value="381">Serbia +381</option>
+                            <option value="248">Seychelles +248</option>
+                            <option value="232">Sierra Leone +232</option>
+                            <option value="65">Singapore +65</option>
+                            <option value="421">Slovak Republic +421</option>
+                            <option value="386">Slovenia +386</option>
+                            <option value="677">Solomon Islands +677</option>
+                            <option value="252">Somalia +252</option>
+                            <option value="27">South Africa +27</option>
+                            <option value="34">Spain +34</option>
+                            <option value="94">Sri Lanka +94</option>
+                            <option value="290">St. Helena +290</option>
+                            <option value="1869">St. Kitts +1869</option>
+                            <option value="1758">St. Lucia +1758</option>
+                            <option value="249">Sudan +249</option>
+                            <option value="597">Suriname +597</option>
+                            <option value="268">Swaziland +268</option>
+                            <option value="46">Sweden +46</option>
+                            <option value="41">Switzerland +41</option>
+                            <option value="963">Syria +963</option>
+                            <option value="886">Taiwan +886</option>
+                            <option value="7">Tajikistan +7</option>
+                            <option value="66">Thailand +66</option>
+                            <option value="228">Togo +228</option>
+                            <option value="676">Tonga +676</option>
+                            <option value="1868">Trinidad & Tobago +1868</option>
+                            <option value="216">Tunisia +216</option>
+                            <option value="90">Turkey +90</option>
+                            <option value="993">Turkmenistan +993</option>
+                            <option value="1649">Turks & Caicos Islands +1649</option>
+                            <option value="688">Tuvalu +688</option>
+                            <option value="256">Uganda +256</option>
+                            <option value="44">UK +44</option>
+                            <option value="380">Ukraine +380</option>
+                            <option value="971">United Arab Emirates +971</option>
+                            <option value="598">Uruguay +598</option>
+                            <option value="1">USA +1</option>
+                            <option value="998">Uzbekistan +998</option>
+                            <option value="678">Vanuatu +678</option>
+                            <option value="379">Vatican City +379</option>
+                            <option value="58">Venezuela +58</option>
+                            <option value="84">Vietnam +84</option>
+                            <option value="1284">Virgin Islands - British +1284</option>
+                            <option value="1340">Virgin Islands - US +1340</option>
+                            <option value="681">Wallis & Futuna +681</option>
+                            <option value="969">Yemen North +969</option>
+                            <option value="967">Yemen South +967</option>
+                            <option value="260">Zambia +260</option>
+                            <option value="263">Zimbabwe +263</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" placeholder="WhatsApp Number" class="form-input phone-number" required>
+                    </div>
+
+                    <select id="package" name="package" class="form-input" required>
+                        <option value="">Select Package</option>
+                        <option value="Basic (₹4,800)">Basic Package</option>
+                        <option value="Business (₹7,500)">Business Package</option>
+                        <option value="Premium (₹18,999)">Premium Package</option>
                     </select>
-                    <textarea name="message" placeholder="Describe your dream project..." class="form-input" style="height: 100px;"></textarea>
-                    <button type="submit" class="btn-submit">Let's Get Online 🚀</button>
+
+                    <textarea id="message" name="message" placeholder="Briefly describe your project..." class="form-input" style="height: 100px;" required></textarea>
+                    
+                    <button type="submit" id="submitBtn" class="btn-submit">Let's Get Online 🚀</button>
+                    <p id="formStatus" style="margin-top:15px; display:none; color: var(--primary); font-weight: bold;"></p>
                 </form>
             </div>
         </div>
@@ -389,8 +478,58 @@
 
     <footer>
         <p>&copy; 2022 WebFreeOnline Digital Agency. All rights reserved.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; color: #475569;">Building the future of the internet, one pixel at a time.</p>
     </footer>
 
+    <script>
+        const form = document.getElementById('mainForm');
+        const status = document.getElementById('formStatus');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            status.style.display = "block";
+            status.innerText = "Processing...";
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const dialCode = document.getElementById('countrySelect').value;
+            const phoneVal = document.getElementById('phone').value;
+            const fullPhone = "+" + dialCode + " " + phoneVal;
+            const pkg = document.getElementById('package').value;
+            const msg = document.getElementById('message').value;
+
+            const waPhone = "917020975647"; 
+            const waMessage = `*New Inquiry from WebFreeOnline*%0A%0A` +
+                              `*Name:* ${name}%0A` +
+                              `*Email:* ${email}%0A` +
+                              `*Client Phone:* ${fullPhone}%0A` +
+                              `*Package:* ${pkg}%0A` +
+                              `*Message:* ${msg}`;
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            object.phone = fullPhone; 
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: json
+            })
+            .then(async (response) => {
+                status.innerText = "Email sent! Opening WhatsApp...";
+            })
+            .catch(error => {
+                status.innerText = "Opening WhatsApp...";
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    window.open(`https://wa.me/${waPhone}?text=${waMessage}`, '_blank');
+                    form.reset();
+                    status.innerText = "Success! Please check WhatsApp.";
+                }, 1000);
+            });
+        });
+    </script>
 </body>
 </html>
